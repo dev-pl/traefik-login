@@ -1,0 +1,13 @@
+( cd traefik/;./runme )
+( cd login/;./runme )
+
+#( cd echo/;./runme )
+
+sleep 2
+
+echo "checking login: "
+curl -H Host:login.pointlook.com http://localhost
+echo
+#echo "checking echo: "
+#curl -H Host:echo.pointlook.com http://localhost
+#echo

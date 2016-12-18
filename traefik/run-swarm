@@ -1,0 +1,20 @@
+PWD=`pwd`
+
+docker run \
+    -d \
+    -p 80:80 -p 8080:8080 \
+    --net=my-net \
+    -v ${PWD}/ssl:/ssl \
+    traefik \
+    -l DEBUG \
+    -c /dev/null \
+    --docker \
+    --docker.domain=traefik \
+    --docker.endpoint=tcp://10.100.1.1:3376 \
+    --docker.tls \
+    --docker.tls.ca=/ssl/ca.pem \
+    --docker.tls.cert=/ssl/server.pem \
+    --docker.tls.key=/ssl/server-key.pem \
+    --docker.tls.insecureSkipVerify \
+    --docker.watch \
+    --web

@@ -1,0 +1,5 @@
+PWD=`pwd`
+
+FILE=dotfiles-`whoami`.tgz
+(cd ${PWD};tar zcf ${PWD}/private/$FILE ghost shell)
+(cd ${PWD}/private;${PWD}/../bin/enc $FILE)
