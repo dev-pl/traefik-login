@@ -1,4 +1,4 @@
-# apps-01 : PUBLIC
+# traefik-login : PUBLIC
 #
 - dockerized application stack for pointlook using traefik as router
 ```
